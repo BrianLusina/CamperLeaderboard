@@ -1,7 +1,14 @@
 {
-  "name": "camperleaderboard.netlify.com",
+  "name": "camperleaderboard",
   "version": "0.1.0",
   "private": true,
+  "description":"Camper leaderboard for FreeCodeCamp users",
+  "author":"Brian Lusina",
+  "main":"index.js",
+  "repository":{
+    "type":"git",
+    "url":"git+https://github.com/BrianLusina/CamperLeaderboard"
+  },
   "devDependencies": {
     "react-scripts": "0.8.5"
   },
