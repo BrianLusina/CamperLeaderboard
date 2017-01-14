@@ -11,9 +11,9 @@ export default class Header extends Component{
                     data-content="Just some awesome developer..."></span></span>
 				<h1>Camper Leaderboard</h1>
 				<nav>
-					<a href="http://tympanus.net/Blueprints/FullWidthTabs/" className="bp-icon bp-icon-prev" data-info="previous Blueprint"><span>Previous Blueprint</span></a>
-					<a href="http://tympanus.net/codrops/?p=18699" className="bp-icon bp-icon-drop" data-info="back to the Codrops article"><span>back to the Codrops article</span></a>
-					<a href="http://tympanus.net/codrops/category/blueprints/" className="bp-icon bp-icon-archive" data-info="Blueprints archive"><span>Go to the archive</span></a>
+					<a href="http://twitter.com/brianlusina/" className="bp-icon bp-icon-twitter" data-info="Twitter"><span>Twitter</span></a>
+					<a href="http://github.com/BrianLusina" className="bp-icon bp-icon-github" data-info="Github"><span>Github</span></a>
+					<a href="https://plus.google.com/102302755150765254402" className="bp-icon bp-icon-google" data-info="Google+"><span>Google+</span></a>
 				</nav>
 			</header>
         )

@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import '../styles/gridwrap.css'
+import '../../styles/gridwrap.css'
+
+//https://fcctop100.herokuapp.com/api/fccusers/top/recent
+//https://fcctop100.herokuapp.com/api/fccusers/top/alltime
 
 export default class GridWrap extends Component{
+    constructor(){
+        super();
+    }
     render(){
         return(
             <section className="grid-wrap">
@@ -17,4 +23,6 @@ export default class GridWrap extends Component{
             </section>
         )
     }
+
+    
 }

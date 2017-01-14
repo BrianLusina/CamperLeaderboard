@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/slideshow.css';
+import '../../styles/slideshow.css';
 
 
 export default class Slideshow extends Component{
