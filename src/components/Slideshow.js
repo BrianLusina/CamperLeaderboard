@@ -4,7 +4,7 @@ import '../styles/slideshow.css';
 
 export default class Slideshow extends Component{
     constructor(){
-        
+        super();
         this._displaySlideshowitems = this._displaySlideshowitems.bind(this);
     }
 
