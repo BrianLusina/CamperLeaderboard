@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-        <Body apiroot="https://fcctop100.herokuapp.com/api/fccusers/top/"/>
+        <Body apiroot="https://fcctop100.herokuapp.com/api/fccusers/"/>
       </div>
     );
   }

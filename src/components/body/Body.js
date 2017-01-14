@@ -36,18 +36,18 @@ export default class Body extends Component{
     _getData(){
         jQuery.ajax({
             method:"GET",
-            url: "https://fcctop100.herokuapp.com/api/fccusers/top/top/recent",
+            url: this.props.apiroot+"top/"+this.state.column,
             dataType: 'json', 
             cache: false,
             success: function(data) {
                 var users = data;
-                this.setState({users: users});
-                console.log(users);
-            },
 
+                this.setState({users});
+                console.log(users);
+            }.bind(this),
             error: function(xhr, status, err) {
-                // console.error(this.props.apiroot, status, err.toString());
-            }
+                console.error(this.props.apiroot, status, err.toString());
+            }.bind(this)
         });
     }
 }
