@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import Slideshow from './Slideshow';
 import GridWrap from './GridWrap';
+import jQuery from 'jquery';
 
 export default class Body extends Component{
     constructor(){
@@ -33,17 +34,20 @@ export default class Body extends Component{
      * updates the state which will be passed on to GridWrap and Slideshow
      */
     _getData(){
-        $.ajax({
-            url: this.props.apiroot+"top/"+this.state.column,
+        jQuery.ajax({
+            method:"GET",
+            url: "https://fcctop100.herokuapp.com/api/fccusers/top/top/recent",
             dataType: 'json', 
             cache: false,
             success: function(data) {
                 var users = data;
                 this.setState({users: users});
-            }.bind(this),
+                console.log(users);
+            },
+
             error: function(xhr, status, err) {
-                console.error(this.props.apiroot, status, err.toString());
-            }.bind(this)
+                // console.error(this.props.apiroot, status, err.toString());
+            }
         });
     }
 }
