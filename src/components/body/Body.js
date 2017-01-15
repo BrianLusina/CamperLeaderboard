@@ -5,8 +5,8 @@ import GridWrap from './GridWrap';
 import jQuery from 'jquery';
 
 export default class Body extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             users:[],
             reverse: true,
@@ -15,18 +15,19 @@ export default class Body extends Component{
 
         this._getData = this._getData.bind(this);
     }
-    // fetch data when the component mounts
-    componentDidMount(){
-        this._getData();
-    }
 
     render(){
         return(
             <div id="grid-gallery" className="grid-gallery">
-                <GridWrap />
-                <Slideshow />
+                <GridWrap users={this.state.users}/>
+                <Slideshow users={this.state.users}/>
             </div>            
         )
+    }
+
+    // fetch data when the component mounts
+    componentWillMount(){
+        this._getData();
     }
 
     /**
@@ -41,9 +42,9 @@ export default class Body extends Component{
             cache: false,
             success: function(data) {
                 var users = data;
-
+                // update users 
                 this.setState({users});
-                console.log(users);
+                //console.log(users);
             }.bind(this),
             error: function(xhr, status, err) {
                 console.error(this.props.apiroot, status, err.toString());

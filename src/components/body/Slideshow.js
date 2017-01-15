@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import '../../styles/slideshow.css';
 
 
@@ -36,4 +36,8 @@ export default class Slideshow extends Component{
     _displaySlideshowitems(){
         
     }
+}
+
+Slideshow.propTypes = {
+    users: PropTypes.array.isRequired
 }

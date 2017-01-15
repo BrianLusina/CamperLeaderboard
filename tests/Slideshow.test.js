@@ -4,8 +4,14 @@ import Slideshow from '../src/components/Slideshow';
 
 
 describe("Slideshow tests", ()=>{
+    const node, component;
+
+    beforeEach(()=>{
+        node = document.createElement("div");
+        component = <Slideshow users={[]}/>;
+    });
+
     it("renders without crashes", ()=>{
-        const div = document.createElement("div");
-        render(<Slideshow />, div);
+        render(component, node);
     });
 })
