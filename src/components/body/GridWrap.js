@@ -15,9 +15,19 @@ export default class GridWrap extends Component{
         this._createElement = this._createElement.bind(this);
     }
 
+    //check if the component should update
+    shouldComponentUpdate(nextProps, nextState){
+        if(this.props.users === nextProps.users && this.state.userViews === nextState.userViews){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     // create the user views before the component renders
-    componentWillMount(){
-        this._createElement();
+    // when it receives the props
+    componentWillReceiveProps(nextProps){
+        this._createElement(nextProps);
     }
 
     render(){
@@ -33,8 +43,8 @@ export default class GridWrap extends Component{
 
 
     // creates a view element for each of the user data received
-    _createElement(){
-        var userViews = this.props.users.map((item, indx) =>{
+    _createElement(receivedProps){
+        var userViews = receivedProps.users.map((item, indx) =>{
             return(
                 <li key={indx}>
                     <figure>

@@ -5,23 +5,31 @@ import '../../styles/slideshow.css';
 export default class Slideshow extends Component{
     constructor(){
         super();
+        this.state={
+            slideshowView:[]
+        }
         this._displaySlideshowitems = this._displaySlideshowitems.bind(this);
     }
 
-    render(){
+    //check if this component should update
+    shouldComponentUpdate(nextProps, nextState){
+        if(this.props.users === nextProps.users && this.state.slideshowView === nextState.slideshowView){
+            return false;
+        }else{
+            return true;
+        }
+    }
 
+    // recieves the props and passess them down to have their views created
+    componentWillReceiveProps(nextProps){
+        this._displaySlideshowitems(nextProps);
+    }
+
+    render(){
         return(
             <section className="slideshow">
                 <ul>
-                    <li>
-                        <figure>
-                            <figcaption>
-                                <h3>Letterpress asymmetrical</h3>
-                                <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
-                            </figcaption>
-                            <img src="img/large/1.png" alt="img01"/>
-                        </figure>
-                    </li>
+                {this.state.slideshowView}
                 </ul>
                 <nav>
                     <span className="icon nav-prev"></span>
@@ -33,8 +41,26 @@ export default class Slideshow extends Component{
         )
     }
 
-    _displaySlideshowitems(){
-        
+    //**Displays the slideshow items, receives props and creates their views */
+    _displaySlideshowitems(receivedProps){
+        var slideshowView = receivedProps.users.map((item, indx)=>{
+            return(
+                <li key={indx}>
+                    <figure>
+                        <figcaption>
+                            <h3>{item.username}</h3>
+                            <p>{item.lastUpdate}</p>
+                            <p>{item.alltime}</p>
+                            <p>{item.recent}</p>
+                        </figcaption>
+                        <img src={item.img} alt={this.username}/>
+                    </figure>
+                </li>
+            )
+        });
+
+        //update the state
+        this.setState({slideshowView});
     }
 }
 
