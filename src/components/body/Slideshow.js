@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import '../../styles/slideshow.css';
-
+import moment from 'moment';
 
 export default class Slideshow extends Component{
     constructor(){
@@ -44,14 +44,16 @@ export default class Slideshow extends Component{
     //**Displays the slideshow items, receives props and creates their views */
     _displaySlideshowitems(receivedProps){
         var slideshowView = receivedProps.users.map((item, indx)=>{
+            var update = moment(item.lastUpdate).format("YYYY-MM-DD HH:mm:ss");
+            
             return(
                 <li key={indx}>
                     <figure>
                         <figcaption>
                             <h3>{item.username}</h3>
-                            <p>{item.lastUpdate}</p>
-                            <p>{item.alltime}</p>
-                            <p>{item.recent}</p>
+                            <p>{update}</p>
+                            <p>All time points: {item.alltime}</p>
+                            <p>Past 30 Days: {item.recent}</p>
                         </figcaption>
                         <img src={item.img} alt={this.username}/>
                     </figure>
