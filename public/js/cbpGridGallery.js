@@ -363,4 +363,6 @@ $(document).ready(function(){
 	window.CBPGridGallery = CBPGridGallery;
 
 })( window );
+
+new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 });

@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import '../../styles/gridwrap.css'
-import moment from 'moment';
 
 //https://fcctop100.herokuapp.com/api/fccusers/top/recent
 //https://fcctop100.herokuapp.com/api/fccusers/top/alltime
@@ -46,17 +45,16 @@ export default class GridWrap extends Component{
     // creates a view element for each of the user data received
     _createElement(receivedProps){
         var userViews = receivedProps.users.map((item, indx) =>{
-            
-            // format the time 
-            var update = moment(item.lastUpdate).format("YYYY-MM-DD HH:mm:ss");
             return(
                 <li key={indx}>
                     <figure>
-                        <img src={item.img} alt={this.username}/>
+                        <a href={"https://www.freecodecamp.com/" + item.username} target="_blank">
+                            <img src={item.img} alt={this.username}/>
+                        </a>
                         <figcaption>
                             <h3>{item.username}</h3>
-                            <p>All time points: {item.alltime}</p>
-                            <p>Past 30 Days: {item.recent}</p>
+                            <p>All time points: {item.alltime} pts</p>
+                            <p>Past 30 Days: {item.recent} pts</p>
                         </figcaption>
                     </figure>
                 </li>

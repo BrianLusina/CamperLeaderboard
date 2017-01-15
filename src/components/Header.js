@@ -9,7 +9,7 @@ export default class Header extends Component{
 				<span>The Lusina 
                     <span className="bp-icon bp-icon-about" 
                     data-content="Just some awesome developer..."></span></span>
-				<h1>Camper Leaderboard</h1>
+				<h1>FCC Camper Leaderboard</h1>
 				<nav>
 					<a href="http://twitter.com/brianlusina/" className="bp-icon bp-icon-twitter" data-info="Twitter"><span>Twitter</span></a>
 					<a href="http://github.com/BrianLusina" className="bp-icon bp-icon-github" data-info="Github"><span>Github</span></a>

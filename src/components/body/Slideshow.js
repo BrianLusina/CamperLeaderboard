@@ -29,7 +29,7 @@ export default class Slideshow extends Component{
         return(
             <section className="slideshow">
                 <ul>
-                {this.state.slideshowView}
+                    {this.state.slideshowView}
                 </ul>
                 <nav>
                     <span className="icon nav-prev"></span>
@@ -51,11 +51,13 @@ export default class Slideshow extends Component{
                     <figure>
                         <figcaption>
                             <h3>{item.username}</h3>
-                            <p>{update}</p>
-                            <p>All time points: {item.alltime}</p>
-                            <p>Past 30 Days: {item.recent}</p>
+                            <p>Last update: {update}</p>
+                            <p>All time points: {item.alltime} pts</p>
+                            <p>Past 30 Days: {item.recent} pts</p>
                         </figcaption>
-                        <img src={item.img} alt={this.username}/>
+                        <a href={"https://www.freecodecamp.com/" + item.username} target="_blank">
+                            <img className="slideshow_image" src={item.img} alt={this.username}/>
+                        </a>
                     </figure>
                 </li>
             )
