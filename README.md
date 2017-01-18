@@ -1,5 +1,7 @@
 # Camper Leaderboard
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e3675d8f8f844ac98e26ddd5dbcf6e5c)](https://www.codacy.com/app/BrianLusina/CamperLeaderboard?utm_source=github.com&utm_medium=referral&utm_content=BrianLusina/CamperLeaderboard&utm_campaign=badger)
+
 Camper Leaderboard for Freecode camp users.
 
 Displays a table of the Free Code Camp campers who've earned the most brownie points in the past 30 days.
