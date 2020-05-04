@@ -10,27 +10,31 @@
     "url": "git+https://github.com/BrianLusina/CamperLeaderboard"
   },
   "devDependencies": {
-    "babel-jest": "^18.0.0",
+    "babel-jest": "^19.0.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "enzyme": "^2.7.0",
     "jQuery": "^1.7.4",
-    "jest": "^18.1.0",
-    "jest-cli": "^18.1.0",
-    "jquery": "^3.1.1",
+    "jest": "^24.0.0",
+    "jest-cli": "^24.9.0",
+    "jquery": "^3.5.0",
     "moment": "^2.25.0",
     "react-addons-test-utils": "^15.4.2",
-    "react-scripts": "0.8.5",
+    "react-scripts": "3.0.0",
     "react-test-renderer": "^15.4.2"
   },
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "snyk": "^1.306.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "snyk": true
 }
